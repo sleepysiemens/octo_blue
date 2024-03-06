@@ -20,6 +20,10 @@
     'resources/js/app.js',
     ])
 
+    {{--SUMMERNOTE--}}
+    <link rel="stylesheet" href="{{asset('/plugins/summernote/summernote-bs4.min.css')}}">
+    {{--/SUMMERNOTE--}}
+
     <script src="{{'https://kit.fontawesome.com/0a007e12dc.js'}}" crossorigin="anonymous"></script>
     @livewireStyles
 
@@ -101,33 +105,24 @@
     <!-- END #content -->
 </div>
 <!-- END #app -->
-{{--
-<script src="{{asset('/admin/gritter/js/jquery.gritter.js')}}"></script>
-<script src="{{asset('/admin/flot/source/jquery.canvaswrapper.js')}}"></script>
-<script src="{{asset('/admin/flot/source/jquery.colorhelpers.js')}}"></script>
-<script src="{{asset('/admin/flot/source/jquery.flot.js')}}"></script>
-<script src="{{asset('/admin/flot/source/jquery.flot.saturated.js')}}"></script>
-<script src="{{asset('/admin/flot/source/jquery.flot.browser.js')}}"></script>
-<script src="{{asset('/admin/flot/source/jquery.flot.drawSeries.js')}}"></script>
-<script src="{{asset('/admin/flot/source/jquery.flot.uiConstants.js')}}"></script>
-<script src="{{asset('/admin/flot/source/jquery.flot.uiConstants.js')}}"></script>
-<script src="{{asset('/admin/flot/source/jquery.flot.time.js')}}"></script>
-<script src="{{asset('/admin/flot/source/jquery.flot.resize.js')}}"></script>
-<script src="{{asset('/admin/flot/source/jquery.flot.pie.js')}}"></script>
-<script src="{{asset('/admin/flot/source/jquery.flot.crosshair.js')}}"></script>
-<script src="{{asset('/admin/flot/source/jquery.flot.categories.js')}}"></script>
-<script src="{{asset('/admin/flot/source/jquery.flot.navigate.js')}}"></script>
-<script src="{{asset('/admin/flot/source/jquery.flot.touchNavigate.js')}}"></script>
-<script src="{{asset('/admin/flot/source/jquery.flot.hover.js')}}"></script>
-<script src="{{asset('/admin/flot/source/jquery.flot.touch.js')}}"></script>
-<script src="{{asset('/admin/flot/source/jquery.flot.selection.js')}}"></script>
-<script src="{{asset('/admin/flot/source/jquery.flot.symbol.js')}}"></script>
-<script src="{{asset('/admin/flot/source/jquery.flot.legend.js')}}"></script>
-<script src="{{asset('/admin/jquery-sparkline/jquery.sparkline.min.js')}}"></script>
-<script src="{{asset('/admin/jvectormap-next/jquery-jvectormap.min.js')}}"></script>
-<script src="{{asset('/admin/jvectormap-content/world-mill.js')}}"></script>
-<script src="{{asset('/admin/bootstrap-datepicker/dist/js/bootstrap-datepicker.js')}}"></script>
---}}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script src="{{asset('/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('/plugins/summernote/summernote-bs4.min.js')}}"></script>
+<script>
+    $(document).ready(function() {
+        $('#summernote').summernote({
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['fontname', ['fontname']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+            ]
+        });
+    });
+</script>
+
 </body>
 </html>
 @livewireScripts

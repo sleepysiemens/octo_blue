@@ -51,6 +51,7 @@ class AdminController extends Controller
                 'title'=>request()->title,
                 'keywords'=>request()->keywords,
                 'description'=>request()->description,
+                'text'=>request()->text,
             ];
         $blog_post->update($data);
 

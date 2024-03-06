@@ -1,5 +1,9 @@
 @extends('Layouts.wrapper')
 
+@section('title')
+    Синяя смазка оптом
+@endsection
+
 @section('content')
     @include('pages.main.blocks.welcome')
     @include('pages.main.blocks.about')
@@ -7,5 +11,4 @@
     @include('pages.main.blocks.table')
     @include('pages.main.blocks.form')
     @include('pages.main.blocks.news')
-
 @endsection
