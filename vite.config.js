@@ -10,6 +10,7 @@ export default defineConfig({
                 'resources/css/app.css',
                 'resources/css/admin/app.min.css',
                 'resources/css/vendor.min.css',
+                'resources/css/style.css',
             ],
             refresh: true,
         }),
