@@ -4,12 +4,27 @@ namespace App\Http\Controllers;
 
 use DefStudio\Telegraph\Models\TelegraphChat;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class MainController extends Controller
 {
     public function index()
     {
-        return view('pages.main.index');
+        if(Cache::has('title') and Cache::has('description'))
+        {
+            $title=Cache::get('title');
+            $description=Cache::get('description');
+        }
+        else
+        {
+            $title='Синяя Смазка Оптом';
+            $description='Описание';
+
+            Cache::put('title',$title);
+            Cache::put('description',$description);
+        }
+
+        return view('pages.main.index', compact('title', 'description'));
     }
 
     public function submit_form()

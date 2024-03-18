@@ -4,9 +4,9 @@
 @endsection
 @section('content')
     <h1>Новый пост</h1>
-    <a href="{{route('admin.index')}}">назад</a>
+    <a href="{{route('admin.post.index')}}">назад</a>
     <div class="container">
-        <form method="post" action="{{route('admin.update', $blog_post)}}">
+        <form method="post" action="{{route('admin.post.update', $blog_post)}}">
             @csrf
             @method('patch')
             <div class="form-group mt-3">

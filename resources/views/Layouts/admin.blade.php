@@ -54,7 +54,7 @@
             <!-- BEGIN menu -->
             <div class="menu">
                 <div class="menu-profile" style="background-image: url({{asset('img/gallery-11.jpg')}});">
-                    <a href="{{route('admin.index')}}" class="menu-profile-link" data-toggle="app-sidebar-profile" data-target="#appSidebarProfileMenu">
+                    <a href="{{route('admin.profile.index')}}" class="menu-profile-link" data-toggle="app-sidebar-profile" data-target="#appSidebarProfileMenu">
                         <div class="menu-profile-cover with-shadow"></div>
                         <div class="menu-profile-image">
                             <i class="fas fa-user-circle text-white fs-34px"></i>
@@ -70,9 +70,16 @@
                 <div class="menu-header"></div>
 
 
-
-                <div class="menu-item @yield('blog')">
+                <div class="menu-item @yield('main')">
                     <a href="{{route('admin.index')}}" class="menu-link">
+                        <div class="menu-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div class="menu-text">Главная</div>
+                    </a>
+                </div>
+                <div class="menu-item @yield('blog')">
+                    <a href="{{route('admin.post.index')}}" class="menu-link">
                         <div class="menu-icon">
                             <i class="far fa-clipboard"></i>
                         </div>

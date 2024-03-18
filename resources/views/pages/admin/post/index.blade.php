@@ -5,7 +5,7 @@
 @section('content')
     <h1>Блог</h1>
     <div class="row mt-3">
-        <a class="btn btn-primary col-2" href="{{route('admin.create')}}">
+        <a class="btn btn-primary col-2" href="{{route('admin.post.create')}}">
             Новый пост
         </a>
     </div>
@@ -29,9 +29,9 @@
                             <td class="py-2">{{$post->title}}</td>
                             <td class="py-2">{{$post->keywords}}</td>
                             <td class="py-2">{{$post->description}}</td>
-                            <td class="py-2"><a href="{{route('admin.edit',$post)}}"><i class="fas fa-pen"></i></a></td>
+                            <td class="py-2"><a href="{{route('admin.post.edit',$post)}}"><i class="fas fa-pen"></i></a></td>
                             <td class="py-2">
-                                <form method="post" action="{{route('admin.delete',$post)}}">
+                                <form method="post" action="{{route('admin.post.delete',$post)}}">
                                     @csrf
                                     @method('delete')
                                     <button class="btn"><i class="fas fa-trash-alt"></i></button>

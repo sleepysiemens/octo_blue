@@ -4,9 +4,9 @@
 @endsection
 @section('content')
     <h1>Новый пост</h1>
-    <a href="{{route('admin.index')}}">назад</a>
+    <a href="{{route('admin.post.index')}}">назад</a>
     <div class="container">
-        <form method="post" action="{{route('admin.store')}}">
+        <form method="post" action="{{route('admin.post.store')}}">
             @csrf
             <div class="form-group mt-3">
                 <label class="form-control-label ms-2" for="url">Url</label>

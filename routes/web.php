@@ -22,14 +22,22 @@ Route::post('/', '\App\Http\Controllers\MainController@submit_form')->name('subm
 Route::get('/news/{url}', '\App\Http\Controllers\BlogController@index')->name('blog.show');
 
 Route::group(['middleware' => ['auth','admin'], 'prefix'=>'/admin'], function () {
-    Route::get('/', '\App\Http\Controllers\AdminController@index')->name('admin.index');
-    Route::get('/create', '\App\Http\Controllers\AdminController@create')->name('admin.create');
-    Route::post('/', '\App\Http\Controllers\AdminController@store')->name('admin.store');
-    Route::delete('/{blog_post}', '\App\Http\Controllers\AdminController@delete')->name('admin.delete');
-    Route::get('/edit/{blog_post}', '\App\Http\Controllers\AdminController@edit')->name('admin.edit');
-    Route::patch('/update/{blog_post}', '\App\Http\Controllers\AdminController@update')->name('admin.update');
 
-    Route::get('/logout','\App\Http\Controllers\AdminController@logout')->name('admin.logout');
+    Route::get('/', '\App\Http\Controllers\Admin\MainController@index')->name('admin.index');
+    Route::patch('/', '\App\Http\Controllers\Admin\MainController@update')->name('admin.update');
+
+
+    Route::get('/post', '\App\Http\Controllers\Admin\PostController@index')->name('admin.post.index');
+    Route::get('/post/create', '\App\Http\Controllers\Admin\PostController@create')->name('admin.post.create');
+    Route::post('/pst/', '\App\Http\Controllers\Admin\PostController@store')->name('admin.post.store');
+    Route::delete('/post/{blog_post}', '\App\Http\Controllers\Admin\PostController@delete')->name('admin.post.delete');
+    Route::get('/post/edit/{blog_post}', '\App\Http\Controllers\Admin\PostController@edit')->name('admin.post.edit');
+    Route::patch('/post/update/{blog_post}', '\App\Http\Controllers\Admin\PostController@update')->name('admin.post.update');
+
+    Route::get('/profile', '\App\Http\Controllers\Admin\ProfileController@index')->name('admin.profile.index');
+    Route::patch('/profile', '\App\Http\Controllers\Admin\ProfileController@update')->name('admin.profile.update');
+
+    Route::get('/logout','\App\Http\Controllers\Admin\MainController@logout')->name('admin.logout');
 });
 
 Auth::routes();

@@ -6,6 +6,8 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>@yield('title')</title>
+    <meta name="description" content="@yield('description')">
+
     {{--
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
     --}}

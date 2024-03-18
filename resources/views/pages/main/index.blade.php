@@ -1,7 +1,11 @@
 @extends('Layouts.wrapper')
 
 @section('title')
-    Синяя смазка оптом
+    {{$title}}
+@endsection
+
+@section('description')
+    {{$description}}
 @endsection
 
 @section('content')
