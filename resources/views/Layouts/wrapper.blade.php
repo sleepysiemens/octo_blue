@@ -20,7 +20,6 @@
     <script src="https://kit.fontawesome.com/0a007e12dc.js" crossorigin="anonymous"></script>
     <!-- Core theme CSS (includes Bootstrap)-->
     @vite([
-    'resources/css/style.css',
     'resources/css/app.css',
     ])
 </head>
