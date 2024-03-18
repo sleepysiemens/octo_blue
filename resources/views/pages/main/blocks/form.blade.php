@@ -8,7 +8,7 @@
                 <p class="text-white mt-0 opacity-75">Чтобы узнать актуальную цену. Мы с Вами свяжемся.</p>
                 <livewire:form :number="1" />
             </div>
-            <div class="col-5 h-100">
+            <div class="col-5 d-none d-lg-block h-100">
                 <div class="features-device-mockup">
                     <div class="circle_ bg-primary rounded-circle position-absolute">
                     </div>
