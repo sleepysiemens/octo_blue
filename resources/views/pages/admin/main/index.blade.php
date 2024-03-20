@@ -26,5 +26,24 @@
             </button>
         </form>
     </div>
+<hr>
+    <div class="container pt-5">
+        <div class="card">
+            <div class="card-body">
+                <h3>Прайс</h3>
+                <div class="row mt-3">
+                    <div class="col-auto">
+                        <a href="{{route('price.download')}}" target="_blank">Скачать прайс</a>
+                    </div>
+                    <form method="post" action="{{route('admin.file')}}" enctype="multipart/form-data" class="col">
+                        @csrf
+                        <input type="file" name="file" required>
+                        <button type="submit" class="btn btn-primary">Загрузить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
 @endsection

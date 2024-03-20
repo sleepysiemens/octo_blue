@@ -5,9 +5,21 @@
                 <!-- Mashead text and app badges-->
                 <div class="mb-5 mb-lg-0 text-center text-lg-start">
                     <h1 class="display-1 lh-1 fs-1 mb-3 ff-kanit">Заявка успешно отправлена</h1>
-                    <p class="lead fw-normal text-muted mb-4">
-                        Вы будете перенаправлены на главную страницу через 5 секунд.
-                    </p>
+                    <div class="row">
+                        <div class="col-auto">
+                            <a class="lead fw-normal text-muted" href="{{route('price.download')}}" target="_blank">
+                                Скачать прай лист
+                            </a>
+                        </div>
+                        <div class="col-lg-auto d-flex col-12">
+                            <p class="my-lg-auto my-2">или</p>
+                        </div>
+                        <div class="col-auto">
+                            <a class="lead fw-normal text-muted " href="{{route('main.index')}}">
+                                Вернуться на главную
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-6 col-12">
@@ -29,4 +41,4 @@
         </div>
     </div>
 </div>
-<livewire:redirect5s lazy/>
+{{--<livewire:redirect5s lazy/>--}}

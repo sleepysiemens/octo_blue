@@ -18,13 +18,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', '\App\Http\Controllers\MainController@index')->name('main.index');
 Route::post('/', '\App\Http\Controllers\MainController@submit_form')->name('submit.form');
+Route::get('/form', '\App\Http\Controllers\MainController@submit_form_get')->name('submit.form.get');
 
 Route::get('/news/{url}', '\App\Http\Controllers\BlogController@index')->name('blog.show');
+
+Route::get('/lab', '\App\Http\Controllers\MainController@lab')->name('lab.show');
+Route::get('/1_ИМ_Артиколи_форма_для_заполнения', '\App\Http\Controllers\MainController@price')->name('price.download');
 
 Route::group(['middleware' => ['auth','admin'], 'prefix'=>'/admin'], function () {
 
     Route::get('/', '\App\Http\Controllers\Admin\MainController@index')->name('admin.index');
     Route::patch('/', '\App\Http\Controllers\Admin\MainController@update')->name('admin.update');
+    Route::post('/file', '\App\Http\Controllers\Admin\MainController@file')->name('admin.file');
 
 
     Route::get('/post', '\App\Http\Controllers\Admin\PostController@index')->name('admin.post.index');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\BlogPost;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 
 class MainController extends Controller
@@ -65,6 +66,18 @@ class MainController extends Controller
         Cache::put('keywords',$this->keywords);
 
         return redirect()->route('admin.index');
+    }
+
+    public function file(Request $request)
+    {
+        if ($request->file('file')->isValid()) {
+            $file = $request->file('file');
+            $fileName = '1_ИМ_Артиколи_форма_для_заполнения.' . $file->getClientOriginalExtension();
+            $file->move(public_path('files'), $fileName);
+            return redirect()->back()->with('success', 'Файл успешно загружен.');
+        }
+
+        return redirect()->back()->with('error', 'Ошибка загрузки файла.');
     }
 
     public function logout()

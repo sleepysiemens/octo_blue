@@ -1,10 +1,15 @@
-<section class="bg-light d-none d-lg-block">
+<section class="bg-light">
     <div class="container px-5">
         <div class="row gx-5 align-items-center justify-content-center justify-content-lg-between">
             <div class="col-12">
                 <h2 class="display-4 lh-1 mb-4">Характеристики</h2>
             </div>
-            <div class="row justify-content-center">
+            <div class="col-12">
+                <a class="fs-4 text-decoration-none" href="{{route('lab.show')}}" target="_blank">
+                    Лабораторные исследования
+                </a>
+            </div>
+            <div class="row justify-content-center d-none d-lg-block mt-3">
                 <div class="col-12">
                     <div class="card border-0 shadow rounded-5">
                         <div class="card-body p-4">

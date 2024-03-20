@@ -64,8 +64,32 @@ class MainController extends Controller
                 break;
         }
         $chat=TelegraphChat::query()->where('chat_id','=','-4142885109')->first();
-        $chat->message("Новая заявка на сайте.\nСпособ связи:".$data['feedback_type']."\nКонтактные данные:".$data['feedback_info']."\nКомментарий:".$data['comment'])->send();
+        $chat->message("Новая заявка на сайте.\nСпособ связи: ".$data['feedback_type']."\nКонтактные данные: ".$data['feedback_info']."\nКомментарий: ".$data['comment'])->send();
 
+        return redirect()->route('submit.form.get');
+    }
+
+    public function submit_form_get()
+    {
         return view('pages.form-submit.index');
+
+    }
+
+
+    public function lab()
+    {
+        // Путь к вашему файлу Word
+        $wordFilePath = public_path('img/IMG_3876.jpg');
+
+        // Отправляем файл как поток в HTTP-ответе
+        return response()->file($wordFilePath);
+    }
+
+    public function price()
+    {
+        $wordFilePath = public_path('files/1_ИМ_Артиколи_форма_для_заполнения.xlsx');
+
+        // Отправляем файл как поток в HTTP-ответе
+        return response()->download($wordFilePath, '1_ИМ_Артиколи_форма_для_заполнения.xlsx');
     }
 }

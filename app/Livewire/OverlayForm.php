@@ -2,12 +2,13 @@
 
 namespace App\Livewire;
 
+use Livewire\Attributes\On;
 use Livewire\Component;
 
 class OverlayForm extends Component
 {
     public $display='d-none';
-
+    #[On('enable_form')]
     public function display_()
     {
         if($this->display=='d-none')

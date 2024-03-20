@@ -16,15 +16,13 @@
                                     <p class="m-0 text-start">Оптовая цена</p>
                                     <div class="d-flex justify-content-center">
                                         <p class="my-auto me-2">От</p>
-                                        <h1 class="ff-kanit my-auto">100 ₽</h1>
+                                        <h1 class="ff-kanit my-auto">220 ₽</h1>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-8 col-10 m-lg-0 mb-3">
-                            <button class="btn btn-primary w-100 h-100">
-                                <p class="m-0 text-center fs-4">Оставить заявку</p>
-                            </button>
+                            <livewire:welcome-btn/>
                         </div>
 {{--
                         <div class="col-lg-4 col-10 m-lg-0 mb-3">
