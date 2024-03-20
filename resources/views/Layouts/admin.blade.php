@@ -128,6 +128,18 @@
             ]
         });
     });
+
+    $(document).ready(function() {
+        $('#summernote1').summernote({
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['fontname', ['fontname']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+            ]
+        });
+    });
 </script>
 
 </body>

@@ -10,21 +10,38 @@ class MainController extends Controller
 {
     public function index()
     {
-        if(Cache::has('title') and Cache::has('description'))
+        if(Cache::has('title') and Cache::has('description') and Cache::has('keywords'))
         {
             $title=Cache::get('title');
             $description=Cache::get('description');
+            $keywords=Cache::get('keywords');
         }
         else
         {
-            $title='Синяя Смазка Оптом';
-            $description='Описание';
+            $title='OKTOOIL – Синяя смазка оптом';
+            $description='OKTOOIL предлагает качественную синюю смазку оптом для подшипников и промышленного оборудования. В наличии высокотемпературные, литиевые и пластичные смазки в тубах и ведрах. Лучшие цены на рынке, быстрая доставка по всей России.';
+            $keywords='синяя смазка оптом
+синяя смазка для подшипников
+смазка синяя в тубах
+купить синюю смазку
+высокотемпературная синяя смазка
+смазка 158 синяя
+синяя смазка цены
+синяя литиевая смазка
+смазка в тубах синяя цена
+смазка синяя EP 2
+синяя пластичная смазка
+синяя смазка Blue
+смазка синего цвета
+синяя смазка артикул
+смазка синяя ведро';
 
             Cache::put('title',$title);
             Cache::put('description',$description);
+            Cache::put('keywords',$keywords);
         }
 
-        return view('pages.main.index', compact('title', 'description'));
+        return view('pages.main.index', compact(['title', 'description', 'keywords']));
     }
 
     public function submit_form()

@@ -7,6 +7,7 @@
     <meta name="author" content="" />
     <title>@yield('title')</title>
     <meta name="description" content="@yield('description')">
+      <meta name="keywords" content="@yield('keywords')">
 
     {{--
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>

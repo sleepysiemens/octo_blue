@@ -5,6 +5,10 @@
 @endsection
 
 @section('description')
+    {{$blog_post->description}}
+@endsection
+
+@section('keywords')
     {{$blog_post->keywords}}
 @endsection
 
