@@ -63,7 +63,7 @@ class MainController extends Controller
                     $data['feedback_type']='WhatsApp';
                 break;
         }
-        $chat=TelegraphChat::find(1);
+        $chat=TelegraphChat::query()->where('chat_id','=','-4142885109')->first();
         $chat->message("Новая заявка на сайте.\nСпособ связи:".$data['feedback_type']."\nКонтактные данные:".$data['feedback_info']."\nКомментарий:".$data['comment'])->send();
 
         return view('pages.form-submit.index');
