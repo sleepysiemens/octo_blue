@@ -48,7 +48,7 @@ class MainController extends Controller
     {
         $data=request()->all();
         unset($data['_token']);
-        switch ($data['feedback_type'])
+        /*switch ($data['feedback_type'])
         {
             case 'email':
                 $data['feedback_type']='Электронная почта';
@@ -62,9 +62,13 @@ class MainController extends Controller
             case 'wa':
                     $data['feedback_type']='WhatsApp';
                 break;
-        }
+        }*/
+
+
+
         $chat=TelegraphChat::query()->where('chat_id','=','-4142885109')->first();
-        $chat->message("Новая заявка на сайте.\nСпособ связи: ".$data['feedback_type']."\nКонтактные данные: ".$data['feedback_info']."\nКомментарий: ".$data['comment'])->send();
+        #$chat->message("Новая заявка на сайте.\nСпособ связи: ".$data['feedback_type']."\nКонтактные данные: ".$data['feedback_info']."\nКомментарий: ".$data['comment'])->send();
+        $chat->message("Новая заявка на сайте.\nКонтактные данные:"."\n\t- Email: ".$data['email']."\n\t- Телефон: ".$data['phone']."\nКомментарий: ".$data['comment'])->send();
 
         return redirect()->route('submit.form.get');
     }

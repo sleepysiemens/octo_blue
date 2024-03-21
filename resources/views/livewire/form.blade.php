@@ -1,7 +1,7 @@
 <div>
     <form action="{{route('submit.form')}}" method="post">
         @csrf
-        <div class="row text-white">
+        {{--<div class="row text-white">
             <div class="col-12">
                 <p>Как с Вами связаться?</p>
             </div>
@@ -21,8 +21,8 @@
                 <input type="radio" class="form-check-input" id="wa_radio{{$number}}" wire:model.live="feedback_type" name="feedback_type" value="wa">
                 <label class="form-check-label ms-2" for="wa_radio{{$number}}">WhatsApp</label>
             </div>
-        </div>
-        <div class="form-group mt-3">
+        </div>--}}
+        {{--<div class="form-group mt-3">
             @switch($feedback_type)
                 @case('email')
                     <input type="email" name="feedback_info" class="form-control bg-white py-2 rounded-pill" aria-describedby="emailHelp" placeholder="Email" required>
@@ -37,9 +37,15 @@
                     <input type="tel" name="feedback_info" class="form-control bg-white py-2 rounded-pill" aria-describedby="emailHelp" placeholder="Номер телефона" required>
                     @break
             @endswitch
+        </div>--}}
+        <div class="form-group mt-4">
+            <input type="email" name="email" class="form-control bg-white py-2 rounded-pill" aria-describedby="emailHelp" placeholder="Email" required>
+        </div>
+        <div class="form-group mt-4">
+            <input type="tel" name="phone" class="form-control bg-white py-2 rounded-pill" aria-describedby="emailHelp" placeholder="Телефон" required>
         </div>
 
-        <div class="form-group mt-3">
+        <div class="form-group mt-4">
             <textarea class="form-control bg-white py-2 rounded-4" rows="5" name="comment" placeholder="Комментарий..."></textarea>
         </div>
         <button class="btn btn-primary w-100 rounded-pill mt-4" style="height: 45px">

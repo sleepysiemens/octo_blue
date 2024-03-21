@@ -1,12 +1,10 @@
 @extends('Layouts.wrapper')
 
-@section('title')
-    {{$title}}
-@endsection
+@section('title'){{$title}}@endsection
 
-@section('description')
-    {{$description}}
-@endsection
+@section('keywords'){{$keywords}}@endsection
+
+@section('description'){{$description}}@endsection
 
 @section('content')
     @include('pages.main.blocks.welcome')
