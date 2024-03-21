@@ -43,7 +43,7 @@
             <textarea class="form-control bg-white py-2 rounded-4" rows="5" name="comment" placeholder="Комментарий..."></textarea>
         </div>
         <button class="btn btn-primary w-100 rounded-pill mt-4" style="height: 45px">
-            Запросить оптовый прайс
+            Запросить прайс
         </button>
         <p class="text-white opacity-50 text-center mt-2 mb-0" style="font-size: 12px">Нажимая на кнопку “Отправить”, вы соглашаетесь с Политикой обработки персональных данных</p>
     </form>

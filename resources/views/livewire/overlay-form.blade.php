@@ -2,8 +2,7 @@
     <button wire:click.live="display_" class="btn btn-primary rounded-pill px-3 mb-lg-0">
             <span class="d-flex align-items-center">
                 <i class="bi-chat-text-fill me-2"></i>
-                <span class="small d-none d-lg-block">Запросить оптовый прайс</span>
-                <span class="small d-block d-lg-none">Запросить прайс</span>
+                <span class="small">Запросить прайс</span>
             </span>
     </button>
 
